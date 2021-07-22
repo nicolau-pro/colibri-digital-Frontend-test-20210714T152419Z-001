@@ -9,10 +9,13 @@ body {
   background-color: #693490;
 
   color: white;
-  font-family: 'Roboto', sans-serif;
   margin: 0;
   overflow-x: hidden;
   overflow-y: scroll;
+}
+
+* {
+  font-family: 'Roboto', sans-serif;
 }
 
 .App {
@@ -51,6 +54,7 @@ h5,
 h6 {
   font-family: 'Teko', sans-serif;
   font-weight: 400;
+  text-align: center;
 }
 
 main {
@@ -63,4 +67,44 @@ main {
   justify-content: center;
 }
 
+.center {
+  text-align: center;
+}
+
+.im {
+  font-size: inherit;
+  line-height: inherit;
+}
+
 @import 'Entry';
+
+button {
+  cursor: pointer;
+  border: 0;
+  width: auto;
+  border-radius: 999px;
+  padding: 0.75em 1em;
+  color: white;
+  font-weight: bold;
+  letter-spacing: 0.1em;
+
+  margin-left: 1em;
+  background-color: #662d91;
+  transition: background-color 0.3s ease;
+
+  display: inline-flex;
+  align-items: center;
+
+  &:hover {
+    background-color: #17aea4;
+  }
+
+  .im {
+    margin-right: 0.5em;
+  }
+
+  &.big {
+    font-size: 100%;
+    padding: 1em;
+  }
+}

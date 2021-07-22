@@ -1,10 +1,26 @@
+import React, { useState } from 'react';
 import './styles/App.min.css';
 import Entry from './components/Entry';
+import Button from './components/Button';
 
 const App = () => {
   const data = require('./MOCK_DATA.json');
 
-  // console.log(data);
+  const [viewId, setViewId] = useState(null);
+
+  const handleView = (id) => {
+    console.log(`View ${id}`);
+    setViewId(id);
+  };
+
+  const handleViewAll = () => {
+    setViewId(null);
+  };
+
+  const handleEdit = (id) => {
+    console.log(`Edit ${id}`);
+  };
+
   return (
     <div className="App">
       <header className="App-header">
@@ -12,9 +28,17 @@ const App = () => {
         <h1>Tech Challenge</h1>
       </header>
       <main>
-        {data.map((entry, index) => (
-          <Entry key={index} data={entry} />
-        ))}
+        {viewId ? (
+          <section className="center">
+            <h1>Viewing entry number {viewId}</h1>
+            <Entry data={data.filter((entry) => entry.id === viewId)[0]} handleEdit={handleEdit} />
+            <Button big icon="angle-left" onClick={() => handleViewAll()}>
+              BACK TO THE ENTRIES LIST
+            </Button>
+          </section>
+        ) : (
+          data.map((entry, index) => <Entry key={index} data={entry} handleView={handleView} handleEdit={handleEdit} />)
+        )}
       </main>
     </div>
   );

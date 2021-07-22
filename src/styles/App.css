@@ -8,10 +8,13 @@ body {
   background-size: cover;
   background-color: #693490;
   color: white;
-  font-family: 'Roboto', sans-serif;
   margin: 0;
   overflow-x: hidden;
   overflow-y: scroll;
+}
+
+* {
+  font-family: 'Roboto', sans-serif;
 }
 
 .App {
@@ -47,6 +50,7 @@ h5,
 h6 {
   font-family: 'Teko', sans-serif;
   font-weight: 400;
+  text-align: center;
 }
 
 main {
@@ -57,6 +61,15 @@ main {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
+}
+
+.center {
+  text-align: center;
+}
+
+.im {
+  font-size: inherit;
+  line-height: inherit;
 }
 
 .Entry {
@@ -71,9 +84,19 @@ main {
   max-width: 100%;
   margin: 20px;
   padding: 1em;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 6px rgba(0, 0, 255, 0.1);
+  display: flex;
+  flex-direction: column;
+}
+
+.Entry .info {
   display: flex;
   justify-content: space-between;
+}
+
+.Entry .buttons {
+  display: flex;
+  justify-content: flex-end;
 }
 
 .Entry ul {
@@ -89,7 +112,11 @@ main {
 
 .Entry ul li:nth-child(-n + 2) {
   font-weight: bold;
-  font-size: 120%;
+  font-size: 130%;
+}
+
+.Entry ul li:nth-child(-n + 1) {
+  margin-bottom: -0.45em;
 }
 
 .Entry .field {
@@ -106,4 +133,33 @@ main {
   font-size: 500%;
   margin-top: 35px;
   opacity: 0.3;
+}
+
+button {
+  cursor: pointer;
+  border: 0;
+  width: auto;
+  border-radius: 999px;
+  padding: 0.75em 1em;
+  color: white;
+  font-weight: bold;
+  letter-spacing: 0.1em;
+  margin-left: 1em;
+  background-color: #662d91;
+  transition: background-color 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+}
+
+button:hover {
+  background-color: #17aea4;
+}
+
+button .im {
+  margin-right: 0.5em;
+}
+
+button.big {
+  font-size: 100%;
+  padding: 1em;
 }
