@@ -1,0 +1,30 @@
+main {
+  width: 1900px;
+  max-width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  padding-top: 120px;
+
+  .graphs {
+    padding: 20px;
+    margin-top: -20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.7);
+    width: 100%;
+
+    section {
+      width: 100%;
+      display: block;
+      max-width: 1000px;
+      display: flex;
+      justify-content: center;
+      text-align: center;
+      margin: auto;
+    }
+  }
+}

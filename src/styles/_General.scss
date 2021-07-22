@@ -1,0 +1,42 @@
+body {
+  @include bacgroundImage('https://1dnz053xx1x848asdz1c4kr0-wpengine.netdna-ssl.com/wp-content/uploads/2018/06/avada-it-clouds2.png');
+  background-color: #693490;
+
+  color: white;
+  margin: 0;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+* {
+  font-family: 'Roboto', sans-serif;
+}
+
+.App {
+  width: 100%;
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Teko', sans-serif;
+  font-weight: 400;
+  text-align: center;
+}
+
+.center {
+  text-align: center;
+}
+
+.im {
+  font-size: inherit;
+  line-height: inherit;
+}

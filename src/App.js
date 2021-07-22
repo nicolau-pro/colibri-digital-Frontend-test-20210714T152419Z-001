@@ -1,20 +1,27 @@
 import React, { useState } from 'react';
+import { Route, useHistory } from 'react-router-dom';
 import './styles/App.min.css';
+
+import Header from './components/Header';
+import Graphs from './components/Graphs';
 import Entry from './components/Entry';
-import Button from './components/Button';
+import ViewEntry from './components/ViewEntry';
 
 const App = () => {
-  const data = require('./MOCK_DATA.json');
+  const history = useHistory();
 
-  const [viewId, setViewId] = useState(null);
+  const [data, setData] = useState(require('./MOCK_DATA.json'));
 
   const handleView = (id) => {
-    console.log(`View ${id}`);
-    setViewId(id);
+    history.push(`/view?id=${id}`);
   };
 
   const handleViewAll = () => {
-    setViewId(null);
+    history.push(`/`);
+  };
+
+  const handleViewGraphs = () => {
+    history.push(`/graphs`);
   };
 
   const handleEdit = (id) => {
@@ -23,22 +30,19 @@ const App = () => {
 
   return (
     <div className="App">
-      <header className="App-header">
-        <img className="logo" alt="Colibri Digital" src="https://1dnz053xx1x848asdz1c4kr0-wpengine.netdna-ssl.com/wp-content/uploads/2021/07/Registered-Logo-Transparent-1.png"></img>
-        <h1>Tech Challenge</h1>
-      </header>
+      <Header handleViewAll={handleViewAll} handleViewGraphs={handleViewGraphs} />
       <main>
-        {viewId ? (
-          <section className="center">
-            <h1>Viewing entry number {viewId}</h1>
-            <Entry data={data.filter((entry) => entry.id === viewId)[0]} handleEdit={handleEdit} />
-            <Button big icon="angle-left" onClick={() => handleViewAll()}>
-              BACK TO THE ENTRIES LIST
-            </Button>
-          </section>
-        ) : (
-          data.map((entry, index) => <Entry key={index} data={entry} handleView={handleView} handleEdit={handleEdit} />)
-        )}
+        <Route exact path="/">
+          {data.map((entry, index) => (
+            <Entry key={index} data={entry} handleView={handleView} handleEdit={handleEdit} />
+          ))}
+        </Route>
+
+        <Route exact path="/graphs">
+          <Graphs data={data} />
+        </Route>
+
+        <Route path="/view" children={<ViewEntry data={data} handleEdit={handleEdit} handleViewAll={handleViewAll} />} />
       </main>
     </div>
   );

@@ -25,23 +25,6 @@ body {
   align-items: center;
 }
 
-header {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background: white;
-  color: black;
-}
-
-header > * {
-  margin: 10px;
-}
-
-header .logo {
-  max-height: 80px;
-}
-
 h1,
 h2,
 h3,
@@ -53,16 +36,6 @@ h6 {
   text-align: center;
 }
 
-main {
-  width: 1900px;
-  max-width: 100%;
-  padding: 20px;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
 .center {
   text-align: center;
 }
@@ -70,6 +43,55 @@ main {
 .im {
   font-size: inherit;
   line-height: inherit;
+}
+
+header {
+  width: 100%;
+  position: fixed;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(255, 255, 255, 0.95);
+  color: black;
+}
+
+header > * {
+  margin: 10px 20px;
+}
+
+header .logo {
+  max-height: 80px;
+}
+
+main {
+  width: 1900px;
+  max-width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-top: 120px;
+}
+
+main .graphs {
+  padding: 20px;
+  margin-top: -20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.7);
+  width: 100%;
+}
+
+main .graphs section {
+  width: 100%;
+  display: block;
+  max-width: 1000px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  margin: auto;
 }
 
 .Entry {
@@ -149,6 +171,7 @@ button {
   transition: background-color 0.3s ease;
   display: inline-flex;
   align-items: center;
+  outline: none;
 }
 
 button:hover {

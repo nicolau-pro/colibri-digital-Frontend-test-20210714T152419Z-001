@@ -1,110 +1,15 @@
-@import url('https://fonts.googleapis.com/css2?family=Teko:wght@300;400;500;600;700&display=swap');
-
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import 'Typography';
 
 @import 'Mixins';
 
-body {
-  @include bacgroundImage('https://1dnz053xx1x848asdz1c4kr0-wpengine.netdna-ssl.com/wp-content/uploads/2018/06/avada-it-clouds2.png');
-  background-color: #693490;
+@import 'General';
 
-  color: white;
-  margin: 0;
-  overflow-x: hidden;
-  overflow-y: scroll;
-}
+@import 'Header';
 
-* {
-  font-family: 'Roboto', sans-serif;
-}
-
-.App {
-  width: 100%;
-  min-height: 100vh;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-header {
-  width: 100%;
-
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-
-  background: white;
-  color: black;
-
-  > * {
-    margin: 10px;
-  }
-
-  .logo {
-    max-height: 80px;
-  }
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: 'Teko', sans-serif;
-  font-weight: 400;
-  text-align: center;
-}
-
-main {
-  width: 1900px;
-  max-width: 100%;
-  padding: 20px;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.center {
-  text-align: center;
-}
-
-.im {
-  font-size: inherit;
-  line-height: inherit;
-}
+@import 'Main';
 
 @import 'Entry';
 
-button {
-  cursor: pointer;
-  border: 0;
-  width: auto;
-  border-radius: 999px;
-  padding: 0.75em 1em;
-  color: white;
-  font-weight: bold;
-  letter-spacing: 0.1em;
+@import 'Buttons';
 
-  margin-left: 1em;
-  background-color: #662d91;
-  transition: background-color 0.3s ease;
-
-  display: inline-flex;
-  align-items: center;
-
-  &:hover {
-    background-color: #17aea4;
-  }
-
-  .im {
-    margin-right: 0.5em;
-  }
-
-  &.big {
-    font-size: 100%;
-    padding: 1em;
-  }
-}
+// Note: the layout is desktop/tablety only, no responsive styles fro mobile have been implemented
