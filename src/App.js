@@ -6,11 +6,17 @@ import Header from './components/Header';
 import Graphs from './components/Graphs';
 import Entry from './components/Entry';
 import ViewEntry from './components/ViewEntry';
+import EditEntry from './components/EditEntry';
 
 const App = () => {
   const history = useHistory();
 
   const [data, setData] = useState(require('./MOCK_DATA.json'));
+
+  const handleBack = () => {
+    console.log('<<< BACK');
+    history.goBack();
+  };
 
   const handleView = (id) => {
     history.push(`/view?id=${id}`);
@@ -25,7 +31,13 @@ const App = () => {
   };
 
   const handleEdit = (id) => {
-    console.log(`Edit ${id}`);
+    history.push(`/edit?id=${id}`);
+  };
+
+  const handleSaveEntry = (id, newData) => {
+    console.log(id);
+    console.table(newData);
+    setData(data.map((entry) => (entry.id === id ? newData : entry)));
   };
 
   return (
@@ -43,6 +55,8 @@ const App = () => {
         </Route>
 
         <Route path="/view" children={<ViewEntry data={data} handleEdit={handleEdit} handleViewAll={handleViewAll} />} />
+
+        <Route path="/edit" children={<EditEntry data={data} handleBack={handleBack} handleSaveEntry={handleSaveEntry} />} />
       </main>
     </div>
   );

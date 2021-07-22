@@ -184,5 +184,37 @@ button .im {
 
 button.big {
   font-size: 100%;
-  padding: 1em;
+  padding: 1em 1.5em;
+}
+
+.edit form {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2em;
+}
+
+.edit form label {
+  padding: 0.5em;
+  display: flex;
+  flex-direction: column;
+}
+
+.edit form label input {
+  border: 0;
+  border-radius: 999px;
+  padding: 0.5em 1em;
+  margin: 0.5em;
+  outline: none;
+  width: 400px;
+  max-width: 90%;
+  font-size: 18px;
+}
+
+.edit form label input:focus {
+  background: #a2deda;
+}
+
+.edit .buttons {
+  display: flex;
+  justify-content: center;
 }
