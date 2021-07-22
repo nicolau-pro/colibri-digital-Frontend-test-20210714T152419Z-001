@@ -43,6 +43,7 @@ const EditEntry = (props) => {
           </label>
         </form>
       </section>
+
       <section className="buttons">
         <Button big icon="angle-left" onClick={() => props.handleBack()}>
           BACK
