@@ -1,0 +1,109 @@
+@import url("https://fonts.googleapis.com/css2?family=Teko:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+body {
+  background-attachment: fixed;
+  background-image: url("https://1dnz053xx1x848asdz1c4kr0-wpengine.netdna-ssl.com/wp-content/uploads/2018/06/avada-it-clouds2.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: #693490;
+  color: white;
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+.App {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: white;
+  color: black;
+}
+
+header > * {
+  margin: 10px;
+}
+
+header .logo {
+  max-height: 80px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Teko', sans-serif;
+  font-weight: 400;
+}
+
+main {
+  width: 1900px;
+  max-width: 100%;
+  padding: 20px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.Entry {
+  background-attachment: fixed;
+  background-image: url("https://1dnz053xx1x848asdz1c4kr0-wpengine.netdna-ssl.com/wp-content/uploads/2016/11/avada-it-clouds1.webp");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: #6479ca;
+  border-radius: 20px;
+  width: 560px;
+  max-width: 100%;
+  margin: 20px;
+  padding: 1em;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+}
+
+.Entry ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.Entry ul li {
+  padding: 0.3em;
+  display: flex;
+}
+
+.Entry ul li:nth-child(-n + 2) {
+  font-weight: bold;
+  font-size: 120%;
+}
+
+.Entry .field {
+  display: block;
+  min-width: 160px;
+  opacity: 0.7;
+  user-select: none;
+}
+
+.Entry .id {
+  height: 0;
+  line-height: 0;
+  align-self: flex-start;
+  font-size: 500%;
+  margin-top: 35px;
+  opacity: 0.3;
+}

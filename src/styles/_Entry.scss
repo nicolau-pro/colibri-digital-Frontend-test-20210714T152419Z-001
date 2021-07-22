@@ -1,0 +1,46 @@
+.Entry {
+  @include bacgroundImage('https://1dnz053xx1x848asdz1c4kr0-wpengine.netdna-ssl.com/wp-content/uploads/2016/11/avada-it-clouds1.webp');
+  background-color: #6479ca;
+
+  border-radius: 20px;
+  width: 560px;
+  max-width: 100%;
+  margin: 20px;
+  padding: 1em;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+
+  display: flex;
+  justify-content: space-between;
+
+  ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+
+    li {
+      padding: 0.3em;
+      display: flex;
+
+      &:nth-child(-n + 2) {
+        font-weight: bold;
+        font-size: 120%;
+      }
+    }
+  }
+
+  .field {
+    display: block;
+    min-width: 160px;
+    opacity: 0.7;
+    user-select: none;
+  }
+
+  .id {
+    height: 0;
+    line-height: 0;
+    align-self: flex-start;
+    font-size: 500%;
+    margin-top: 35px;
+    opacity: 0.3;
+  }
+}
